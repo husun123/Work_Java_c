@@ -4,11 +4,13 @@ import java.util.Date;
 
 public class Board {
 
-	private int id;
+	private Integer id;
 	private String title;
 	private String content;
 	private String writer;
 	private Date regDate;
+	
+	public Board() {}
 	
 	public Board(int id, String title, String content, String writer, Date regDate) {
 		this.id = id;
@@ -60,14 +62,9 @@ public class Board {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((content == null) ? 0 : content.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((regDate == null) ? 0 : regDate.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		result = prime * result + ((writer == null) ? 0 : writer.hashCode());
-		return result;
+	
+		return this.title.hashCode() + this.id + this.content.hashCode() + this.writer.hashCode() + this.regDate.hashCode();
+		
 	}
 
 	@Override
@@ -80,8 +77,8 @@ public class Board {
 			return false;
 		}
 		
-		Integer b = (int) obj;
-		if(id == b) {
+		Board b = (Board) obj;
+		if(id == b.id) {
 			return true;
 		}
 		return false;
@@ -90,20 +87,20 @@ public class Board {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Board [id=");
+		builder.append("게시판 [번호 =");
 		builder.append(id);
-		builder.append(", title=");
+		builder.append(", 제목=");
 		builder.append(title);
-		builder.append(", content=");
+		builder.append(", 내용 =");
 		builder.append(content);
-		builder.append(", writer=");
+		builder.append(", 작성자 =");
 		builder.append(writer);
-		builder.append(", regDate=");
+		builder.append(", 작성일 =");
 		builder.append(regDate);
 		builder.append("]");
 		return builder.toString();
 	}
 	
-	
-	
+
+
 }

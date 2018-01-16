@@ -42,7 +42,7 @@ public class PersonController {
 			switch (menu) {
 			case 1:
 				controller.menuAdd();
-
+				
 				break;
 
 			case 2:
@@ -93,7 +93,7 @@ public class PersonController {
 			System.out.println("입력 완료");
 		}
 		catch (MyException e) {
-			// Dao에서 발생한 예외를 service를 거쳐 여기까지 온 다음 출력ㅎ
+			// Dao에서 발생한 예외를 service를 거쳐 여기까지 온 다음 출력
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -149,10 +149,9 @@ public class PersonController {
 }
 
 
-
-
-
-
+/*Board equals 조건 비교는 id값으로 비교
+Service에서 글 등록시 증가하는 번호 관리하기 Integer count 0으로 세팅(++count)
+*/
 
 
 
