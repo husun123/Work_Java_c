@@ -39,7 +39,7 @@ public class BoardDAO {
 			if (item.equals(b)) {
 				item.setTitle(b.getTitle());
 				item.setContent(b.getContent());
-				item.setWriter(b.getWriter());
+				
 				return;
 			}
 		}

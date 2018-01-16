@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class BoardController {
 
-	public BoardService service;
+	private BoardService service;
 	public Scanner input;
 
 
@@ -32,7 +32,7 @@ public class BoardController {
 
 		Date regDate = new Date();
 		
-		Board b = new Board(0, title, content, writer, regDate);
+		Board b = new Board(null, title, content, writer, regDate);
 
 		try {
 			this.service.add(b);
@@ -77,10 +77,9 @@ public class BoardController {
 		String title = this.input.nextLine();
 		System.out.println("내용 : ");
 		String content = this.input.nextLine();
-		System.out.println("작성자 : ");
-		String writer = this.input.nextLine();
+	
 		
-		Board b = new Board(id, title, content, writer, null);
+		Board b = new Board(id, title, content, null, null);
 		
 		try {
 			service.modify(b);

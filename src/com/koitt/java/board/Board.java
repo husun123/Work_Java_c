@@ -1,8 +1,9 @@
 package com.koitt.java.board;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Board {
+public class Board implements Serializable{
 
 	private Integer id;
 	private String title;
@@ -12,7 +13,7 @@ public class Board {
 	
 	public Board() {}
 	
-	public Board(int id, String title, String content, String writer, Date regDate) {
+	public Board(Integer id, String title, String content, String writer, Date regDate) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
